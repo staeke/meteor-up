@@ -33,7 +33,7 @@ COPY ./ /built_app
 ENV <%- key %>=<%- env[key] %>
 <% } %>
 RUN cd  /built_app/programs/server && \
-    npm install --unsafe-perm
+    npm install
 EOT
 
 sudo docker build -t $IMAGE:build . || build_failed
